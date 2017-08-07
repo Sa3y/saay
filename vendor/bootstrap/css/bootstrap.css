@@ -1085,7 +1085,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: #3c3532;
   background-color: #fff;
 }
 input,
@@ -6765,5 +6765,9 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+#email {
+  padding : 20px ;
+  height: auto ;
 }
 /*# sourceMappingURL=bootstrap.css.map */
