@@ -102,17 +102,19 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
+                     <form action="mail.php" method="POST">
                     <form name="sentMessage" id="contactForm" novalidate>
                                 <div class="form-group">
-                                    <input type="email" class="form-control contact" placeholder="بريدك الإلكتروني" id="email" required data-validation-required-message="من فضلك أدخل بريدك.">
+                                    <input type="email" name="email" class="form-control contact" placeholder="بريدك الإلكتروني" id="email" required data-validation-required-message="من فضلك أدخل بريدك.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                                            
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">اشتراك</button>
+                                <button type="submit" class="btn btn-xl" name="submit">اشتراك</button>
                             </div>
+                    </form>
                     </form>
                 </div>
             </div>
