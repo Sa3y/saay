@@ -33,7 +33,7 @@
 
 </head>
 
-<body id="page-top" class="index" dir="rtl">
+<body id="unsubscribe" class="index" dir="rtl">
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -43,20 +43,21 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> القائمة <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="saai.png" alt="هوية ساع" class="logo"/></a>
+                <a class="navbar-brand page-scroll" href="index.html#page-top"><img src="saai.png" alt="هوية ساع" class="logo"/></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
-                        <a href="#page-top"></a>
+                        <a href="index.html#page-top"></a>
+                    </li>
+
+                    <li>
+                        <a class="page-scroll" href="index.html#portfolio">أرسل رسالة</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">عن ساعٍ</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">أرسل رسالة</a>
+                        <a class="page-scroll" href="index.html#services">عن ساعٍ</a>
                     </li>
                 </ul>
             </div>
@@ -64,65 +65,38 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">اكتب رسالتك <br> حدد مستلميك</div>
-                <div class="intro-heading">وساعٍ سينجز المهمة</div>
-                <a href="signup.html" class="page-scroll btn btn-xl">الانضمام إلى ساعٍ</a>
-                <h4><a href="sign.html">تسجيل الدخول</a></h4>
-            </div>
-        </div>
-    </header>
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">ساعٍ</h2> <br/>
-                    <h3 class="section-subheading text-muted">خدمة ساع : هي خدمة توفر لك الجهد و الوقت المبذولين لإرسال العديد من الرسائل في الوقت ذاته لتكون بمثابة
-                        ساعي البريد تصلك منه الرسائل و تُرِسل من خلاله أيضاً . من خلال خدمة سترسل الرسائل بالشكل الذي تريد،
-                        مثل أن تكون رسائل رسمية عبر البريد الإلكتروني أو رسائل عبر تطبيق "واتس آب" أو "تيليجرام" و كذلك أيضاً
-                        تستطيع إرسال الرسائل النصية "SMS “ فكل وسائل المراسلة ستتاح لك.
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container formSection">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">قريبًا</h2>
-                    <h3 class="section-subheading text-muted">أدخل بريدك الإلكتروني لتصلك رسالة تدشين ساعٍ</h3>
-                </div>
-            </div>
+    <section id="signHeader">
+        <div class="container formSection ">
+            <form name="sign" id="signForm" novalidate>
             <div class="row">
                 <div class="col-lg-12">
-                    <form action="mail.php" method="POST">
-                        <form name="sentMessage" id="contactForm" novalidate>
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control contact" placeholder="بريدك الإلكتروني" id="email" required data-validation-required-message="من فضلك أدخل بريدك.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl" name="submit">اشتراك</button>
-                            </div>
-                            <h4 class="text-center"><a href="unsubscribe.html">إلغاء الاشتراك</a></h4>
-                        </form>
-                    </form>
+                    <h3 class="section-heading text-center">حياك الله مرة أخرى</h3>
+                    <br>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <h4> البريد الإلكتروني</h4>
+                            <input type="email" class="form-control" placeholder="البريد الإلكتروني *" id="email" required data-validation-required-message="فضلًا أدخل بريدك الالكتروني">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                            <h4> كلمة السر</h4>
+                            <input type="password" class="form-control" placeholder="كلمة السر *" id="pass" required data-validation-required-message="فضلًا أدخل كلمة السر">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="text-center">
+                        <div id="success"></div>
+                        <button type="submit" class="btn btn-xl">تسجيل</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            </form>
+
+        </div>
         </div>
     </section>
+    </header>
     <footer>
         <div class="container">
             <div class="row">
@@ -138,8 +112,6 @@
             </div>
         </div>
     </footer>
-
-
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 

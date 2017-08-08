@@ -561,61 +561,63 @@ section#contact {
 section#contact .section-heading {
   color: #DCD9D1;
 }
-section#contact .form-group {
+.formSection .form-group {
   margin-bottom: 25px;
 }
-section#contact .form-group input,
+.formSection .form-group input,
 section#contact .form-group textarea {
   padding: 20px;
 }
-section#contact .form-group input.form-control {
+.formSection .form-group input.form-control {
   height: auto;
 }
-section#contact .form-group textarea.form-control {
+.formSection .form-group textarea.form-control {
   height: 236px;
 }
-section#contact .form-control:focus {
+.formSection .form-control:focus {
   border-color: #c6a366;
   box-shadow: none;
 }
-section#contact ::-webkit-input-placeholder {
+.formSection ::-webkit-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
-section#contact :-moz-placeholder {
+.formSection :-moz-placeholder {
   /* Firefox 18- */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
-section#contact ::-moz-placeholder {
+.formSection ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
-section#contact :-ms-input-placeholder {
+.formSection :-ms-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
-section#contact .text-danger {
+.formSection .text-danger {
   color: #e74c3c;
 }
 footer {
   padding: 25px 0;
   text-align: center;
+  background-color: #222222 ;
 }
 footer span.copyright {
   line-height: 40px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   text-transform: none;
+  color: #c6a366 ;
 }
 footer ul.quicklinks {
   margin-bottom: 0;
