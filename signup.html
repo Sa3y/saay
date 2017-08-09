@@ -67,6 +67,7 @@
         <!-- /.container-fluid -->
     </nav>
 
+  <form  method="POST" action="Register.php">
     <!-- Sign up form Section -->
     <section id="signupHeader">
         <div class="container formSection">
@@ -75,38 +76,41 @@
                     <h2 class="section-heading">حياك الله معنا في ساعٍ</h2>
                 </div>
             </div>
+			
+		
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sign" id="signForm" novalidate>
                         <div class="col-md-12">
+
                             <div class="form-group">
                                 <h4> الاسم الأول</h4>
-                                <input type="text" class="form-control" placeholder="الاسم الأول *" id="name" required data-validation-required-message="فضلًا أدخل اسمك">
+                                <input type="text" name="fname" class="form-control" placeholder="الاسم الأول *" id="fname" required data-validation-required-message="فضلًا أدخل اسمك">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
                                 <h4> اسم العائلة</h4>
-                                <input type="text" class="form-control" placeholder="اسم العائلة *" id="family_name" required data-validation-required-message="فضلًا أدخل اسم العائلة">
+                                <input type="text" name="lname" class="form-control" placeholder="اسم العائلة *" id="lname" required data-validation-required-message="فضلًا أدخل اسم العائلة">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
                                 <h4> البريد الإلكتروني</h4>
-                                <input type="email" class="form-control" placeholder="البريد الإلكتروني *" id="email" required data-validation-required-message="فضلًا أدخل بريدك الالكتروني">
+                                <input type="email" name="email" class="form-control" placeholder="البريد الإلكتروني *" id="email" required data-validation-required-message="فضلًا أدخل بريدك الالكتروني">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
                                 <h4> كلمة السر</h4>
-                                <input type="password" class="form-control" placeholder="كلمة السر *" id="pass" required data-validation-required-message="فضلًا أدخل كلمة السر">
+                                <input type="password" name="password" class="form-control" placeholder="كلمة السر *" id="password" required data-validation-required-message="فضلًا أدخل كلمة السر">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
                                 <h4>تأكيد كلمة السر</h4>
-                                <input type="password" class="form-control" placeholder="تأكيد كلمة السر *" id="confirm_pass" required data-validation-required-message="فضلًا أدخل كلمة السر">
+                                <input type="password" name="password2" class="form-control" placeholder="تأكيد كلمة السر *" id="password2" required data-validation-required-message="فضلًا أدخل كلمة السر">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-right">
                                 <input type="checkbox"  id="agreement" required data-validation-required-message="يجب الموافقة على بنود الخدمة وسياسة الخصوصية للتسجيل">
-                                أوافق على<a href="services.html"> بنود الخدمة </a>و<a href="privacy.html" > سياسة الخصوصية. </a> 
+                                أوافق على<a href="#"> بنود الخدمة </a>و<a href="#" > سياسة الخصوصية. </a> 
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -114,13 +118,15 @@
                         <div class="clearfix"></div>
                         <div class="col-lg-12 text-center">
                             <div id="success"></div>
-                            <button type="submit" class="btn btn-xl">إنشاء حساب</button>
+                            <button type="submit" name="signup-btn" class="btn btn-xl">إنشاء حساب</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+	</form>
+    
     <footer>
         <div class="container">
             <div class="row">
