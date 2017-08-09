@@ -2,7 +2,7 @@
 <?php include "dbconnect.php"?>
 
 <?php
-$db = mysqli_connect("localhost", "root", "", "sa3i");
+$db = mysqli_connect("localhost", "id2515699_khalid", "q1q1q123", "id2515699_sa3i");
  
 ?>
 
@@ -21,7 +21,7 @@ $db = mysqli_connect("localhost", "root", "", "sa3i");
         $query = mysql_real_escape_string($query);
 
          
-        $raw_results = mysql_query("SELECT * FROM users
+        $raw_results = mysql_query("SELECT * FROM user
             WHERE (`title` LIKE '%".$query."%') OR (`text` LIKE '%".$query."%')") or die(mysql_error());
 
          
