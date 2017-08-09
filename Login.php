@@ -63,7 +63,7 @@ if(isset($_POST['login-btn'])){
 			?>
 			<script type="text/javascript">
 			alert("Welcome! you have logged successfully");
-			location="profile.html";
+			location="profile.php";
 			</script>
 			<?php
 		}
