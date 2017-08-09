@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+CREATE DATABASE IF NOT EXISTS sa3i DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE sa3i;
 --
 -- Table structure for table `user`
 --
