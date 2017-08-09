@@ -1,4 +1,3 @@
-<?php include('configSa3i.php');?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +33,7 @@
 
 </head>
 
-<body id="subConfirm" class="index" dir="rtl">
+<body id="unsConfirm" class="index" dir="rtl">
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -46,21 +45,19 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="index.html#page-top"><img src="saai.png" alt="هوية ساع" class="logo"/></a>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="index.html#page-top"></a>
-                    </li> 
+                    </li>
+
                     <li>
                         <a class="page-scroll" href="index.html#portfolio">أرسل رسالة</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="index.html#services">عن ساعٍ</a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="controlPage.php">قائمة أرقامي</a>
                     </li>
                 </ul>
             </div>
@@ -68,66 +65,21 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Sign up form Section -->
-    <section id="signupHeader">
-        <div class="container formSection">
+    <section id="contact">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading"> أضف رقماً</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form  name="sign" method='post' accept-charset='UTF-8'id="signForm" novalidate  >
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <h4>  رقم (واتساب) </h4>
-                                <input name="number" type="number" class="form-control" placeholder="Wahtsapp *" id="whatsNo" required data-validation-required-message="فضلًا أدخل رقم الواتس">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group">
-                                <h4>رقم (تيليقرام)،</h4>
-                                <input name ="number" type="number" class="form-control" placeholder="Telegram *" id="telegramNo" required data-validationrequired-message=" أفضلًا أدخل حساب أو رقم التيليقرام">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group">
-                                <h4> رقم SMS </h4>
-                                <input name="number" type="number" class="form-control" placeholder="SMS *" id="SMSNo" required data-validation-required-message="فضلًا أدخل رقم جوالك لإرسال رسائل قصيرة">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                           
-                           
-                        </div>
-
-                        <div class="clearfix"></div>
-                        <div class="col-lg-12 text-center">
-                            <div id="success"></div>
-                            <button name="save" type="submit" class="btn btn-xl">حفظ</button>
-                            
-                            
-
-                            <?php //Insert the user's Number to DB
-                            if(isset($_POST['save'])){
-      
-                                
-                            $query="insert into user (Numbers) values('$_POST[number]')";
-        
-        mysqli_query($conn , $query);    
-                                
-    }?>
-                            
-                            
-                            
-                        </div>
-                    </form>
+                    <h2 class="section-heading">يؤسفنا إلغاؤك في الاشتراك بخدمة ساعٍ :(. </h2>
                 </div>
             </div>
         </div>
     </section>
-    <footer>
+       <footer>
         <div class="container">
             <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">الحقوق محفوظة &copy; لموقع ساعٍ ١٤٣٨</span>
+                </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="https://github.com/Sa3y/saay" target><i class="fa fa-github"></i></a>
@@ -135,7 +87,10 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <span class="copyright">الحقوق محفوظة &copy; لموقع ساعٍ ١٤٣٨</span>
+                    <ul class="list-inline quicklinks">
+                        <li><a href="unsubscribe.html">إلغاء الاشتراك</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -147,8 +102,7 @@
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>

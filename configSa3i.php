@@ -7,4 +7,5 @@ $conn = mysqli_connect($Host,$username,$password,$DB);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+session_start ();
 ?>
