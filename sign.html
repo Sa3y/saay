@@ -66,6 +66,8 @@
         <!-- /.container-fluid -->
     </nav>
     <header>
+        
+  <form  method="POST" action="Login.php">
     <section id="signHeader">
         <div class="container formSection ">
             <form name="sign" id="signForm" novalidate>
@@ -76,17 +78,17 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <h4> البريد الإلكتروني</h4>
-                            <input type="email" class="form-control" placeholder="البريد الإلكتروني *" id="email" required data-validation-required-message="فضلًا أدخل بريدك الالكتروني">
+                            <input type="email" name="email" class="form-control" placeholder="البريد الإلكتروني *" id="email" required data-validation-required-message="فضلًا أدخل بريدك الالكتروني">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group">
                             <h4> كلمة السر</h4>
-                            <input type="password" class="form-control" placeholder="كلمة السر *" id="pass" required data-validation-required-message="فضلًا أدخل كلمة السر">
+                            <input type="password" name="password" class="form-control" placeholder="كلمة السر *" id="pass" required data-validation-required-message="فضلًا أدخل كلمة السر">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="text-center">
                         <div id="success"></div>
-                        <button type="submit" class="btn btn-xl">تسجيل</button>
+                        <button type="submit" name="login-btn" class="btn btn-xl">تسجيل</button>
                         </div>
                     </div>
                 </div>
@@ -96,6 +98,8 @@
         </div>
         </div>
     </section>
+        </form>
+        
     </header>
     <footer>
         <div class="container">
