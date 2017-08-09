@@ -1,33 +1,54 @@
-<?php include "dbconnect.php"?>
 
 <?php
 
 session_start();
 
-$db = mysqli_connect("localhost", "root", "", "sa3i");
+$db = mysqli_connect("localhost", "id2515699_khalid", "q1q1q123", "id2515699_sa3i");
 
 if (isset($_POST['signup-btn'])) {
 
-	$fname = mysql_real_escape_string($_POST['fname']);
-	$lname = mysql_real_escape_string($_POST['lname']);
-	$email = mysql_real_escape_string($_POST['email']);
-	$password = mysql_real_escape_string($_POST['password']);
-	$password2 = mysql_real_escape_string($_POST['password2']);
+	$fname = ($_POST['fname']);
+	$lname = ($_POST['lname']);
+	$email = ($_POST['email']);
+	$password = ($_POST['password']);
+	$password2 = ($_POST['password2']);
 
 
+	$sql = "select * from user where email='$email' ";
+	$result = mysqli_query($db, $sql);
+	$count = mysqli_num_rows($result);
+	
+	if ($count > 0) {
+		?>
+		<script type="text/javascript">
+		alert("You are a Registered user! redirecting to log-in page");
+		location="sign.html";
+		</script>
+		
+		<?php 
+		
+	}
 
 
 	if ($password == $password2) {
 		$password = md5($password);
-		$sql = "INSERT INTO users(fname,lname,email,password) VALUES('$fname', '$lname', '$email', '$password')";
+		$sql = "INSERT INTO user(fname,lname,email,password,Numbers) VALUES('$fname', '$lname', '$email', '$password',NULL)";
 		mysqli_query($db, $sql);
 		?>
-		<script> alert('Thank you! You have signed Successfully'); </script>
+		<script type="text/javascript">
+		alert("Thank you! You have signed Successfully");
+		location="subConfirm.html";
+		</script>
 		<?php
-		header("location: subConfirm.html");
-	} else {
+			
+	}
+	
+	else
+	{
 		?>
-		<script>alert('The two password do not match, please try again!');</script>
+		<script>alert('The two password do not match, please try again!');
+		location="signup.html";
+		</script>
 		<?php
 	}
 
