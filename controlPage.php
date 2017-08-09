@@ -98,7 +98,7 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <p><?php 
-        //to display the user's number 
+        //to display the user's number from DB
         
         $sql = "SELECT `Numbers` FROM `user` ";
 $result = $conn->query($sql);
