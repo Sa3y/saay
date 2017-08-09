@@ -1,8 +1,8 @@
 <?php 
   $from = "nwnlhrb@gmail.com";
   $to=$_POST['email'];
-$subject="massege";
-$body ="we r sorry becuse u leave us";
+$subject="Unsubscribed!";
+$body ="You've unsubscribed from Sa3y successfully! we hope to see again :)";
     mail($to,$subject,$body); 
 	
 	include("unsubConfirm.html");
