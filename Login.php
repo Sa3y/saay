@@ -2,7 +2,7 @@
 
 session_start();
 
-$db = mysqli_connect("localhost", "root", "", "sa3i");
+$db = mysqli_connect("localhost", "id2515699_khalid", "q1q1q123", "id2515699_sa3i");
 
 
 
@@ -15,33 +15,68 @@ if(isset($_POST['login-btn'])){
 	$password = trim($_POST['password']);
 	$password = htmlspecialchars(strip_tags($password));
 
-	if(empty($email)){
-		$error = true;
-		$errorEmail = 'Please input email';
-	}elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-		$error = true;
-		$errorEmail = 'Please enter a valid email address';
+	if(empty($email))
+	{
+			?>
+		<script type="text/javascript">
+		alert("please enter an email");
+		location="sign.html";
+		</script>
+		<?php
+	}
+	
+	elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
+	{
+		?>
+		<script type="text/javascript">
+		alert("please enter a valid email");
+		location="sign.html";
+		</script>
+		<?php
 	}
 
-	if(empty($password)){
+	if(empty($password))
+	
+	{
 		$error = true;
 		$errorPassword = 'Please enter password';
-	}elseif(strlen($password)< 6){
+	}
+	
+	elseif(strlen($password)< 6) 
+	{
 		$error = true;
 		$errorPassword = 'Password at least 6 character';
 	}
 
-	if(!$error){
+	if(!$error)
+	
+	{
 		$password = md5($password);
 		$sql = "select * from users where email='$email' ";
 		$result = mysqli_query($db, $sql);
 		$count = mysqli_num_rows($result);
 		$row = mysqli_fetch_assoc($result);
-		if($count==1 && $row['password'] == $password){
-			$_SESSION['username'] = $row['username'];
-			header('location: profile.html');
-		}else{
-			$errorMsg = 'Invalid Username or Password';
+		
+		if($count==1 && $row['password'] == $password)
+		{
+			$_SESSION['fname'] = $row['fname'];
+			?>
+			<script type="text/javascript">
+			alert("Welcome! you have logged successfully");
+			location="profile.html";
+			</script>
+			<?php
+		}
+		
+		else
+		
+		{
+			?>
+			<script type="text/javascript">
+			alert("You Are not Rigistered user! redirecting to Rigestration page");
+			location="signup.html";
+			</script>
+			<?php
 		}
 	}
 }
