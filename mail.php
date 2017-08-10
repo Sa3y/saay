@@ -5,15 +5,32 @@
   $to=$_POST['email'];
   $subject="Welcome!";
   $body ="You've succesfully subscribed, thank you for your subscription, Please look forward for us to launch Sa3y!";
-  mail($to,$subject,$body);
-  $sql = "INSERT INTO mail(email) VALUES('$to')";
-  mysqli_query($db, $sql);
-  ?>
-  <script type="text/javascript">
-   alert("شكرا لك! لقد أصبحت ضمن أعضاء القائمة البريدية");
-   location="subConfirm.html";
-   </script>
-<?php
-  include("subConfirm.html");
-  }
+  
+  $sql1 = "select * from mail where email='$to' ";
+  $result = mysqli_query($db, $sql1);
+  $count = mysqli_num_rows($result);
+	
+  if ($count > 0) {
+		?>
+		
+        <script type="text/javascript">
+		alert("أنت بالفعل مسجل لدى قائمتنا البريدية");
+		location="index.html";
+		</script>
+		
+		<?php      
+        } else {
+        $sql = "INSERT INTO mail(email) VALUES('$to')";
+        mysqli_query($db, $sql);
+        mail($to,$subject,$body);
+        ?>
+
+        <script type="text/javascript">
+        alert("شكرا لك! لقد أصبحت ضمن أعضاء القائمة البريدية");
+        location="subConfirm.html";
+        </script>
+        
+        <?php
+        include("subConfirm.html");
+        }}
 ?>
