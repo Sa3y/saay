@@ -35,6 +35,15 @@ CREATE TABLE `numbers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `mail`
+--
+
+CREATE TABLE `mail` (
+  `email` varchar(100) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `user`
