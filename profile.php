@@ -79,21 +79,27 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form  name="sign" method='post' accept-charset='UTF-8'id="signForm" novalidate  >
+                    <form  name="sign" method='post' action="controlPage.php" accept-charset='UTF-8'id="signForm" novalidate  >
                         <div class="col-md-12">
                             <div class="form-group">
                                 <h4>  رقم (واتساب) </h4>
-                                <input name="number" type="number" class="form-control" placeholder="Wahtsapp *" id="whatsNo" required data-validation-required-message="فضلًا أدخل رقم الواتس">
+                                <input name="whatsApp2" type="number" class="form-control" placeholder="Wahtsapp *" id="whatsNo" required data-validation-required-message="فضلًا أدخل رقم الواتس">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
                                 <h4>رقم (تيليقرام)،</h4>
-                                <input name ="number" type="number" class="form-control" placeholder="Telegram *" id="telegramNo" required data-validationrequired-message=" أفضلًا أدخل حساب أو رقم التيليقرام">
+                                <input name ="telegram2" type="number" class="form-control" placeholder="Telegram *" id="telegramNo" required data-validationrequired-message=" أفضلًا أدخل حساب أو رقم التيليقرام">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
                                 <h4> رقم SMS </h4>
-                                <input name="number" type="number" class="form-control" placeholder="SMS *" id="SMSNo" required data-validation-required-message="فضلًا أدخل رقم جوالك لإرسال رسائل قصيرة">
+                                <input name="sms2" type="number" class="form-control" placeholder="SMS *" id="SMSNo" required data-validation-required-message="فضلًا أدخل رقم جوالك لإرسال رسائل قصيرة">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <h4> البريد الالكتروني  : </h4>
+                                <input name="email2" type="text" class="form-control" placeholder="email *" id="SMSNo" required data-validation-required-message="فضلًا أدخل بريدك ">
                                 <p class="help-block text-danger"></p>
                             </div>
                            
@@ -103,22 +109,19 @@
                         <div class="clearfix"></div>
                         <div class="col-lg-12 text-center">
                             <div id="success"></div>
-                            <button name="save" type="submit" class="btn btn-xl">حفظ</button>
-                            
-                            
-
-                            <?php //Insert the user's Number to DB
+                            <button name="save" type="submit" class="btn btn-xl">حفظ  </button> 
+                        
+                     <?php //Insert the user's Number to DB
+                    
                             if(isset($_POST['save'])){
-      
-                                
-                            $query="insert into user (Numbers) values('$_POST[number]')";
-        
-        mysqli_query($conn , $query);    
-                                
-    }?>
+                                $w=$_POST['whatsApp2'];
+                                $t=$_POST['telegram2'];
+                                $s=$_POST['sms2'];
+                                $e=$_POST['email2'];
+                            $query="INSERT INTO `numbers`(`whatsApp`, `telegram`, `sms`, `email`) VALUES ('$w','$t','$s','$e)";   
+                              mysqli_query($conn , $query);}?>
                             
-                            
-                            
+                                                  
                         </div>
                     </form>
                 </div>
