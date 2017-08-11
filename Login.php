@@ -15,50 +15,50 @@ if(isset($_POST['login-btn'])){
 	$password = trim($_POST['password']);
 	$password = htmlspecialchars(strip_tags($password));
 
-	if(empty($email))
-	{
-			?>
+	if(empty($email)){
+
+		?>
 		<script type="text/javascript">
 		alert("please enter an email");
 		location="sign.html";
 		</script>
 		<?php
-	}
-	
-	elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
-	{
-		?>
-		<script type="text/javascript">
-		alert("please enter a valid email");
-		location="sign.html";
-		</script>
-		<?php
-	}
+	}elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 
-	if(empty($password))
+			?>
+				<script type="text/javascript">
+				alert("please enter a valid email");
+				location="sign.html";
+				</script>
+				<?php
+	}
 	
-	{
+
+	if(empty($password)){
 		$error = true;
 		$errorPassword = 'Please enter password';
-	}
+	}elseif(strlen($password)< 6)
 	
-	elseif(strlen($password)< 6) 
 	{
-		$error = true;
-		$errorPassword = 'Password at least 6 character';
-	}
+		
+		?>
+					<script type="text/javascript">
+					alert("Password at least 6 character");
+					location="sign.html";
+					</script>
+					<?php
 
-	if(!$error)
+		
+	}
 	
-	{
+
+	if(!$error){
 		$password = md5($password);
-		$sql = "select * from users where email='$email' ";
+		$sql = "select * from user where email='$email' ";
 		$result = mysqli_query($db, $sql);
 		$count = mysqli_num_rows($result);
 		$row = mysqli_fetch_assoc($result);
-		
-		if($count==1 && $row['password'] == $password)
-		{
+		if($count==1 && $row['password'] == $password){
 			$_SESSION['fname'] = $row['fname'];
 			?>
 			<script type="text/javascript">
@@ -66,17 +66,13 @@ if(isset($_POST['login-btn'])){
 			location="profile.php";
 			</script>
 			<?php
-		}
-		
-		else
-		
-		{
-			?>
-			<script type="text/javascript">
-			alert("You Are not Rigistered user! redirecting to Rigestration page");
-			location="signup.html";
-			</script>
-			<?php
+			}else{
+				?>
+				<script type="text/javascript">
+				alert("You Are not Rigistered user! redirecting to Rigestration page");
+				location="signup.html";
+				</script>
+				<?php
 		}
 	}
 }
