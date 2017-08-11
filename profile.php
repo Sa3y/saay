@@ -79,7 +79,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form  name="sign" method='post' action="controlPage.php" accept-charset='UTF-8'id="signForm" novalidate  >
+                    <form  name="sign" method='post' action="saveNum.php" accept-charset='UTF-8'id="signForm" novalidate  >
                         <div class="col-md-12">
                             <div class="form-group">
                                 <h4>  رقم (واتساب) </h4>
@@ -111,17 +111,7 @@
                             <div id="success"></div>
                             <button name="save" type="submit" class="btn btn-xl">حفظ  </button> 
                         
-                     <?php //Insert the user's Number to DB
-                    
-                            if(isset($_POST['save'])){
-                                $w=$_POST['whatsApp2'];
-                                $t=$_POST['telegram2'];
-                                $s=$_POST['sms2'];
-                                $e=$_POST['email2'];
-                            $query="INSERT INTO `numbers`(`whatsApp`, `telegram`, `sms`, `email`) VALUES ('$w','$t','$s','$e)";   
-                              mysqli_query($conn , $query);}?>
-                            
-                                                  
+                             
                         </div>
                     </form>
                 </div>
