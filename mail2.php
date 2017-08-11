@@ -1,7 +1,6 @@
 <?php 
   session_start();
-  $db = mysqli_connect("localhost", "id2509065_sa3ymail", "sa3ymail", "id2509065_sa3y");
-
+  $db = mysqli_connect("localhost", "id2515699_khalid", "q1q1q123", "id2515699_sa3i");
   if(isset($_POST['submit'])) {
   $to=$_POST['email'];
   $subject="Unsubscribed!";
