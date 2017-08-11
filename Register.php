@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -17,7 +16,7 @@ if (isset($_POST['signup-btn'])) {
 	$sql = "select * from user where email='$email' ";
 	$result = mysqli_query($db, $sql);
 	$count = mysqli_num_rows($result);
-	
+
 	if ($count > 0) {
 		?>
 		<script type="text/javascript">
@@ -28,27 +27,45 @@ if (isset($_POST['signup-btn'])) {
 		<?php 
 		
 	}
+	
+	
+	
+	elseif(strlen($password)< 6 || strlen($password2)< 6 )
+	
+	{
+	
+		?>
+						<script type="text/javascript">
+						alert("Password at least 6 character");
+						location="signup.html";
+						</script>
+						<?php
+	
+			
+		}
+	
+	
+	
+	
 
-
-	if ($password == $password2) {
+	else if ($password == $password2) {
 		$password = md5($password);
 		$sql = "INSERT INTO user(fname,lname,email,password,Numbers) VALUES('$fname', '$lname', '$email', '$password',NULL)";
 		mysqli_query($db, $sql);
 		?>
 		<script type="text/javascript">
-		alert("Thank you! You have signed Successfully");
+		alert("Thank you! You have Registered Successfully");
 		location="subConfirm.html";
 		</script>
-		<?php
+			<?php
 			
-	}
-	
-	else
-	{
-		?>
-		<script>alert('The two password do not match, please try again!');
-		location="signup.html";
-		</script>
+			} 
+			
+			else {
+				?>
+			<script>alert('The two password do not match, please try again!');
+			location="signup.html";
+			</script>
 		<?php
 	}
 
