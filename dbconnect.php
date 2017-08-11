@@ -1,9 +1,6 @@
 <?php
-if (! mysql_connect ( "localhost", "id2515699_khalid", "q1q1q123" )) {
+if (! mysqli_connect ( "localhost", "id2515699_khalid", "q1q1q123","id2515699_sa3i" )) {
 	die ( 'oops connection problem ! --> ' . mysql_error () );
-}
-if (! mysql_select_db ( "id2515699_sa3i" )) {
-	die ( 'oops database selection problem ! --> ' . mysql_error () );
 }
 
 session_start ();
