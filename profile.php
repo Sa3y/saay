@@ -79,7 +79,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form  name="sign" method='post' action="saveNum.php" accept-charset='UTF-8'id="signForm" novalidate  >
+                    <form  name="sign" method='post'  action="saveNum.php" accept-charset='UTF-8'id="signForm" novalidate  >
                         <div class="col-md-12">
                             <div class="form-group">
                                 <h4>  رقم (واتساب) </h4>
@@ -109,11 +109,13 @@
                         <div class="clearfix"></div>
                         <div class="col-lg-12 text-center">
                             <div id="success"></div>
-                            <button name="save" type="submit" class="btn btn-xl">حفظ  </button> 
-                        
-                             
+                            <button name="save" type="submit" class="btn btn-xl">    حفظ     </button> 
                         </div>
                     </form>
+                    
+                        
+                                                             
+                    <a href="controlPage.php">عرض أرقامي</a>        
                 </div>
             </div>
         </div>
