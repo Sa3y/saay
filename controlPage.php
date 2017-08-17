@@ -106,14 +106,15 @@
    <?php
 			// to display the user's number from DB
 			
-			$email = $_SESSION['email'];
-			if (isset ( $_POST ['MyNumbers'] )) {
-				
-				$sql = "SELECT `whatsApp`, `telegram`, `sms` FROM `numbers` WHERE  email='$email' ";
+			// session not post $email = $_POST['email2'];
+			
+				//to compelete query ... must add the condition where email = $email
+				$sql = "SELECT `whatsApp`, `telegram`, `sms` FROM `numbers` ";
 				
 				$result = $conn->query ( $sql );
 				if ($result->num_rows > 0) {
 					// output data of each row
+                    
 					while ( $row = $result->fetch_assoc () ) {
 						echo "<tr>" . "<td>" . $row ["whatsApp"] . "</td>" . 
 
@@ -123,11 +124,8 @@
 					}
 				} else {
 					echo "0 results";
-				}
-			}
-			?>                                  
-     
-                            
+				}	
+			?>                                                      
             </tbody>
 									</table>
 
